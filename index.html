@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-black">
+    <div class="loading-screen">
+        <div class="loader">
+        </div>
+    </div>
+    <!--nav bar-->
+    <div class="side-nav-menu min-vh-100 position-fixed d-flex top-0 bg-white">
+        <div class="nav-tab  d-flex flex-column justify-content-between min-vh-100 p-4">
+            <div class="links">
+                <ul class="list-unstyled overflow-hidden">
+                    <a href="#" class="text-decoration-none text-black">
+                        <li onclick="showSearchInputs(); closeSideNav()" class="py-2 position-relative cursor-pointer">
+                            Search</li>
+                    </a>
+                    <a href="#" class="text-decoration-none text-black">
+                        <li onclick="getCategories(); closeSideNav()" class="py-2 position-relative cursor-pointer">
+                            Categories</li>
+                    </a>
+                    <a href="#" class="text-decoration-none text-black">
+                        <li onclick="getArea(); closeSideNav()" class="py-2 position-relative cursor-pointer">Area</li>
+                    </a>
+                    <a href="#" class="text-decoration-none text-black">
+                        <li onclick="getIngredients(); closeSideNav()" class="py-2 position-relative cursor-pointer">
+                            Ingredients</li>
+                    </a>
+                    <a href="#" class="text-decoration-none text-black">
+                        <li onclick="showContacts(); closeSideNav()" class="py-2 position-relative cursor-pointer">
+                            Contact Us</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="nav-footer">
+                <div class="icons p-3">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <div class="footer">
+                    <p>Copyright Â© 2019 All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav-header d-flex flex-column justify-content-between py-2 text-center px-2 bg-white text-black">
+            <img class="logo w-75" src="imgs/logo.png" alt="" srcset="">
+            <a href="#" class="text-decoration-none text-black"><i class="fa-solid open-close-icon fa-align-justify fa-2x"></i></a>
+            <div>
+                <a href="#" class="text-decoration-none text-black"><i class="fa-solid fa-globe d-block p-3"></i></a>
+                <a href="#" class="text-decoration-none text-black"> <i class="fa-solid fa-share-nodes"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="container w-75" id="searchContainer"></div>
+    
+    <!--images-->
+    <div class="imgs" id="img">
+        <div class="container-fluid">
+            <div class="row m-5 px-3" id="rowData">
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails('52977')" class="imglayer">
+                        <img src="imgs/58oia61564916529.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex">
+                            <h3 class="text-black justify-content-center align-content-lg-start">chorba</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails('53065')" class="imglayer">
+                        <img src="imgs/g046bb1663960946.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">sushi</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails('53060')" class="imglayer">
+                        <img src="imgs/tkxquw1628771028.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Burek</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails('53069')" class="imglayer">
+                        <img src="imgs/4pqimk1683207418.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Bistek</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-5 px-3" id="rowData">
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails('53026')" class="imglayer">
+                        <img src="imgs/n3xxd91598732796.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Tameya</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/mlchx21564916997.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Kumpir</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/1525876468.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Wontons</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/wtsvxx1511296896.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Lasagne</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-5 px-3" id="rowData">
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/1bsv1q1560459826.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Kafteji</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/urzj1d1587670726.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Big Mac</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/uuyrrx1487327597.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Poutine</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/4er7mj1598733193.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Koshary</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-5 px-3" id="rowData">
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/wuxrtu1483564410.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Dal Fry</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/txsupu1511815755.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Timbits</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/rwuyqx1511383174.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Pancakes</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/sxysrt1468240488.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Kapsalon</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-5 px-3" id="rowData">
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/ysxwuq1487323065.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Fish pie</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/wssvvs1511785879.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Flamiche</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/kcv6hj1598733479.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Shawerma</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/utxqpt1511639216.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Kedgeree</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-5 px-3" id="rowData">
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/hyarod1565090529.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Stamppot</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/ctg8jd1585563097.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Moussaka</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/g373701551450225.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Shakshouka</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()" class="imglayer">
+                        <img src="imgs/yrstur1511816601.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Sugar Pie</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-5 px-3" id="rowData">
+                <div class="col-md-3 col-sm-12">
+                    <div onclick="getMealDetails()"class="imglayer">
+                        <img src="imgs/xrrwpx1487347049.jpg" class="rounded w-100" alt="">
+                        <div class="layer d-flex ">
+                            <h3 class="text-black justify-content-center align-content-lg-start">Ribollita</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="js/index.js"></script>
+</body>
+
+</html>
